@@ -4,6 +4,10 @@ import com.habib.unittest.BuisnessImp.DataService;
 import com.habib.unittest.BuisnessImp.SomeBuisnessImpl;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
@@ -17,14 +21,17 @@ import static org.mockito.Mockito.when;
 //    }
 //}
 
+@RunWith(MockitoJUnitRunner.class)
 public class SomeBuisnessTest {
-    SomeBuisnessImpl buisness = new SomeBuisnessImpl();
-    DataService mocDataService = mock(DataService.class);
+    @InjectMocks
+    SomeBuisnessImpl buisness;
+    @Mock
+    DataService mocDataService;
 
-    @Before
-    public void before(){
-        buisness.setDataService(mocDataService);
-    }
+//    @Before
+//    public void before(){
+//        buisness.setDataService(mocDataService);
+//    }
 
 
     @Test
